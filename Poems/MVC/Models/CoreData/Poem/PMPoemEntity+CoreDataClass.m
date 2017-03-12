@@ -1,6 +1,6 @@
 //
 //  PMPoemEntity+CoreDataClass.m
-//  
+//
 //
 //  Created by Dzionis Brek on 2/25/17.
 //
@@ -29,13 +29,13 @@
   if (!context) {
     context = [NSManagedObjectContext MR_defaultContext];
   }
-  
+
   NSPredicate *poemPredicate =
-  [NSPredicate predicateWithFormat:@"poemID == %@", poem.poemID];
-  
-  PMPoemEntity* poemEntity =
-  [PMPoemEntity MR_findFirstWithPredicate:poemPredicate inContext:context];
-  
+      [NSPredicate predicateWithFormat:@"poemID == %@", poem.poemID];
+
+  PMPoemEntity *poemEntity =
+      [PMPoemEntity MR_findFirstWithPredicate:poemPredicate inContext:context];
+
   if (!poemEntity) {
     poemEntity = [PMPoemEntity MR_createEntityInContext:context];
   }
@@ -45,14 +45,14 @@
 
 - (PMPoem *)mantleModel {
   PMPoem *poem = [[PMPoem alloc] init];
-  
+
   poem.poemID = self.poemID;
   poem.name = self.name;
   poem.text = self.text;
   poem.authorID = self.authorID;
   poem.year = self.year;
   poem.favorite = self.favorite;
-  
+
   return poem;
 }
 

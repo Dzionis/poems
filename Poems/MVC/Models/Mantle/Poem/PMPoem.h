@@ -8,13 +8,13 @@
 
 #import <Mantle/Mantle.h>
 
-@interface PMPoem : MTLModel <MTLJSONSerializing>
+@interface PMPoem : MTLModel<MTLJSONSerializing>
 
-@property (strong, nonatomic) NSNumber *poemID;
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *text;
-@property (strong, nonatomic) NSNumber *year;
-@property (strong, nonatomic) NSNumber *favorite;
-@property (strong, nonatomic) NSNumber *authorID;
+@property(strong, nonatomic) NSNumber *poemID;
+@property(strong, nonatomic) NSString *name;
+@property(strong, nonatomic) NSString *text;
+@property(strong, nonatomic) NSNumber *year;
+@property(strong, nonatomic) NSNumber *favorite;
+@property(strong, nonatomic) NSNumber *authorID;
 
 @end

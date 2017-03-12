@@ -11,7 +11,6 @@
 typedef void (^PMNetworkSuccessBlock)(id responsedObject);
 typedef void (^PMNetworkFailedBlock)(NSError *error);
 
-
 @interface PMNetworkManager : NSObject
 
 + (instancetype)sharedManager;

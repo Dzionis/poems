@@ -30,14 +30,14 @@
 
 - (void)saveData {
   [[NSManagedObjectContext MR_defaultContext]
-   MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave,
-                                            NSError *_Nullable error) {
-     if (contextDidSave) {
-       NSLog(@"ManagedObjectContext saved");
-     } else {
-       NSLog(@"ManagedObjectContext not saved");
-     }
-   }];
+      MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave,
+                                               NSError *_Nullable error) {
+        if (contextDidSave) {
+          NSLog(@"ManagedObjectContext saved");
+        } else {
+          NSLog(@"ManagedObjectContext not saved");
+        }
+      }];
 }
 
 @end

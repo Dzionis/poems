@@ -11,9 +11,10 @@
 // Protocols
 #import "PMViewControllerFromStoryboardProtocol.h"
 
-@interface PMPoemViewController : UIViewController<PMViewControllerFromStoryboardProtocol>
+@interface PMPoemViewController
+    : UIViewController<PMViewControllerFromStoryboardProtocol>
 
-@property (strong, nonatomic) NSString *poem;
+@property(strong, nonatomic) NSString *poem;
 @property(assign, nonatomic) NSUInteger pageIndex;
 
 @end

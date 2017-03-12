@@ -35,7 +35,7 @@
 
 // Labels
 
-- (UILabel*)labelForMainNavigationTitle {
+- (UILabel *)labelForMainNavigationTitle {
   UILabel *titleLabel = [[UILabel alloc] init];
   NSMutableAttributedString *attributedTitle =
       [[NSMutableAttributedString alloc]
@@ -47,23 +47,23 @@
   titleLabel.attributedText = attributedTitle;
   [titleLabel sizeToFit];
   CGRect frame = titleLabel.frame;
-  
+
   // Fix issue with font.
   frame.size.height += 10;
   titleLabel.frame = frame;
   return titleLabel;
 }
 
-- (UILabel*)labelForNavigationTitleWithText:(NSString*)text {
+- (UILabel *)labelForNavigationTitleWithText:(NSString *)text {
   UILabel *titleLabel = [[UILabel alloc] init];
   NSMutableAttributedString *attributedTitle =
-  [[NSMutableAttributedString alloc]
-   initWithString:text
-   attributes:[self navigationTitleTextAttributes]];
+      [[NSMutableAttributedString alloc]
+          initWithString:text
+              attributes:[self navigationTitleTextAttributes]];
   titleLabel.attributedText = attributedTitle;
   [titleLabel sizeToFit];
   CGRect frame = titleLabel.frame;
-  
+
   // Fix issue with font.
   frame.size.height += 10;
   titleLabel.frame = frame;
@@ -72,19 +72,19 @@
 
 // Images
 
-- (UIImage*)imageFavoriteForNavigationBar {
+- (UIImage *)imageFavoriteForNavigationBar {
   return [UIImage imageNamed:@"ic_favorite"];
 }
 
-- (UIImage*)imageFavoriteActiveForNavigationBar {
+- (UIImage *)imageFavoriteActiveForNavigationBar {
   return [UIImage imageNamed:@"ic_favorite_active"];
 }
 
-- (UIImage*)imageBackForNavigationBar {
+- (UIImage *)imageBackForNavigationBar {
   return [UIImage imageNamed:@"ic_back"];
 }
 
-- (UIImage*)imageSearch {
+- (UIImage *)imageSearch {
   return [UIImage imageNamed:@"ic_search"];
 }
 
@@ -108,11 +108,11 @@
 
 // Dictionaries
 
-- (NSDictionary*)navigationTitleTextAttributes {
+- (NSDictionary *)navigationTitleTextAttributes {
   return @{
     NSForegroundColorAttributeName : [self navigationBarTitleColor],
     NSFontAttributeName : [self navigationBarTitleFont]
-    };
+  };
 }
 
 @end

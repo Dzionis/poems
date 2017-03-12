@@ -24,9 +24,9 @@
 // Theme
 #import "PMTheme.h"
 
-
 @interface PMPoemPageViewController ()<UIPageViewControllerDataSource,
-UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
+                                       UIPageViewControllerDelegate,
+                                       UIGestureRecognizerDelegate>
 
 /*!
  *  @brief Page view controller is contrainer for racing details screens.
@@ -46,21 +46,21 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+
   [self setupPageData];
   self.pageAnimationFinished = YES;
-  
+
   [self customizeNavigationBar];
   [self updateFavoriteStatus];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+  [super didReceiveMemoryWarning];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  
+
   if (!self.pageViewController) {
     [self setupPageViewController];
   }
@@ -83,8 +83,16 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
 
 - (void)customizeNavigationBar {
   id<PMTheme> theme = [PMThemeManager sharedTheme];
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[theme imageFavoriteForNavigationBar] style:UIBarButtonItemStylePlain target:self action:@selector(addToFavorite:)];
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[theme imageBackForNavigationBar] style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+      initWithImage:[theme imageFavoriteForNavigationBar]
+              style:UIBarButtonItemStylePlain
+             target:self
+             action:@selector(addToFavorite:)];
+  self.navigationItem.leftBarButtonItem =
+      [[UIBarButtonItem alloc] initWithImage:[theme imageBackForNavigationBar]
+                                       style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(backAction:)];
 }
 
 - (void)addToFavorite:(UIBarButtonItem *)sender {
@@ -99,9 +107,11 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
   id<PMTheme> theme = [PMThemeManager sharedTheme];
   PMPoem *poem = self.poemsArray[self.currentIndex];
   if (poem.favorite.boolValue) {
-    [self.navigationItem.rightBarButtonItem setImage:[theme imageFavoriteActiveForNavigationBar]];
+    [self.navigationItem.rightBarButtonItem
+        setImage:[theme imageFavoriteActiveForNavigationBar]];
   } else {
-    [self.navigationItem.rightBarButtonItem setImage:[theme imageFavoriteForNavigationBar]];
+    [self.navigationItem.rightBarButtonItem
+        setImage:[theme imageFavoriteForNavigationBar]];
   }
 }
 
@@ -110,20 +120,21 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
   if (self.favorite) {
     predicate = [NSPredicate predicateWithFormat:@"favorite = YES"];
   }
-  NSArray *arrayOfPoemsEntity = [PMPoemEntity MR_findAllWithPredicate:predicate];
+  NSArray *arrayOfPoemsEntity =
+      [PMPoemEntity MR_findAllWithPredicate:predicate];
   NSMutableArray *poemsArray = @[].mutableCopy;
-  
+
   for (PMPoemEntity *poemEntity in arrayOfPoemsEntity) {
     [poemsArray addObject:[poemEntity mantleModel]];
   }
-  
-  NSSortDescriptor *sortDescriptor =
-  [NSSortDescriptor sortDescriptorWithKey:@"name"
-                                ascending:YES
-                                 selector:@selector(localizedCaseInsensitiveCompare:)];
-  [poemsArray sortUsingDescriptors:@[sortDescriptor]];
+
+  NSSortDescriptor *sortDescriptor = [NSSortDescriptor
+      sortDescriptorWithKey:@"name"
+                  ascending:YES
+                   selector:@selector(localizedCaseInsensitiveCompare:)];
+  [poemsArray sortUsingDescriptors:@[ sortDescriptor ]];
   self.poemsArray = poemsArray;
-  
+
   self.currentIndex = [poemsArray indexOfObject:self.poem];
 }
 
@@ -132,32 +143,34 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
   self.pageViewController = [[UIPageViewController alloc] init];
   self.pageViewController.dataSource = self;
   self.pageViewController.delegate = self;
-  
-  for (UIGestureRecognizer *gestureRecognizer in self.pageViewController.gestureRecognizers) {
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]])
-    {
+
+  for (UIGestureRecognizer *gestureRecognizer in self.pageViewController
+           .gestureRecognizers) {
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
       gestureRecognizer.delegate = self;
     }
   }
-  
+
   PMPoemViewController *poemViewController =
-  [self viewControllerAtIndex:self.currentIndex];
-  
+      [self viewControllerAtIndex:self.currentIndex];
+
   if (poemViewController) {
     // Setup Page View Controller.
     NSArray *viewControllers = @[ poemViewController ];
-    
+
     [self.pageViewController
-     setViewControllers:viewControllers
-     direction:UIPageViewControllerNavigationDirectionForward
-     animated:NO
-     completion:nil];
-    
+        setViewControllers:viewControllers
+                 direction:UIPageViewControllerNavigationDirectionForward
+                  animated:NO
+                completion:nil];
+
     // Set the size of page view controller.
-    CGFloat topViewHeigh = CGRectGetHeight(self.navigationController.navigationBar.frame) + 20;
-    self.pageViewController.view.frame = CGRectMake(0, topViewHeigh, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - topViewHeigh);
-    
-    
+    CGFloat topViewHeigh =
+        CGRectGetHeight(self.navigationController.navigationBar.frame) + 20;
+    self.pageViewController.view.frame =
+        CGRectMake(0, topViewHeigh, CGRectGetWidth(self.view.bounds),
+                   CGRectGetHeight(self.view.bounds) - topViewHeigh);
+
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
@@ -166,15 +179,17 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
 
 #pragma mark - UIGestureRecognizerDelegate
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+       shouldReceiveTouch:(UITouch *)touch {
   if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-    
     CGFloat avalibleZone = CGRectGetWidth(self.view.frame) * 0.25;
     CGPoint touchPoint = [touch locationInView:self.view];
     CGFloat xPosition = touchPoint.x;
-    
-    if (((xPosition < avalibleZone && self.currentIndex != 0) || (xPosition > CGRectGetWidth(self.view.frame) - avalibleZone && self.currentIndex != self.poemsArray.count - 1)) && self.pageAnimationFinished) {
+
+    if (((xPosition < avalibleZone && self.currentIndex != 0) ||
+         (xPosition > CGRectGetWidth(self.view.frame) - avalibleZone &&
+          self.currentIndex != self.poemsArray.count - 1)) &&
+        self.pageAnimationFinished) {
       return YES;
     } else {
       return NO;
@@ -186,47 +201,45 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
 #pragma mark - UIPageViewControllerDataSource
 
 - (PMPoemViewController *)viewControllerAtIndex:(NSUInteger)index {
-  
   if ((self.poemsArray.count == 0) || (index >= self.poemsArray.count)) {
     return nil;
   }
-  
+
   PMPoem *poem = self.poemsArray[index];
   PMPoemViewController *poemViewController =
-  [PMPoemViewController viewControllerFromStoryboard];
+      [PMPoemViewController viewControllerFromStoryboard];
   poemViewController.poem = poem.text;
   poemViewController.title = poem.name;
   poemViewController.pageIndex = index;
-  
+
   return poemViewController;
 }
 
-
 - (UIViewController *)pageViewController:
-(UIPageViewController *)pageViewController
+                          (UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
   NSUInteger index = ((PMPoemViewController *)viewController).pageIndex;
-  
-  if ((index == 0) || (index == NSNotFound)  || !self.pageAnimationFinished) {
+
+  if ((index == 0) || (index == NSNotFound) || !self.pageAnimationFinished) {
     return nil;
   }
-  
+
   index--;
-  
+
   return [self viewControllerAtIndex:index];
 }
 
 - (UIViewController *)pageViewController:
-(UIPageViewController *)pageViewController
+                          (UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
   NSUInteger index = ((PMPoemViewController *)viewController).pageIndex;
-  
+
   if (index == NSNotFound) {
     return nil;
   }
-  
+
   index++;
-  
+
   if (index == self.poemsArray.count || !self.pageAnimationFinished) {
     return nil;
   }
@@ -236,15 +249,14 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
 #pragma mark - UIPageViewControllerDelegate
 
 - (void)pageViewController:(UIPageViewController *)pageViewController
-        didFinishAnimating:(BOOL)finished
-   previousViewControllers:
-(NSArray<UIViewController *> *)previousViewControllers
-       transitionCompleted:(BOOL)completed {
+         didFinishAnimating:(BOOL)finished
+    previousViewControllers:
+        (NSArray<UIViewController *> *)previousViewControllers
+        transitionCompleted:(BOOL)completed {
   // Turn is either finished or aborted
   if (completed && finished) {
     PMPoemViewController *currentDisplayedViewController =
-    (PMPoemViewController *)
-    self.pageViewController.viewControllers[0];
+        (PMPoemViewController *)self.pageViewController.viewControllers[0];
     PMPoem *poem = self.poemsArray[currentDisplayedViewController.pageIndex];
     self.title = poem.name;
     self.currentIndex = currentDisplayedViewController.pageIndex;
@@ -253,16 +265,17 @@ UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
   self.pageAnimationFinished = YES;
 }
 
-- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers {
+- (void)pageViewController:(UIPageViewController *)pageViewController
+    willTransitionToViewControllers:
+        (NSArray<UIViewController *> *)pendingViewControllers {
   self.pageAnimationFinished = NO;
 }
-
 
 #pragma mark - PMViewControllerFromStoryboardProtocol
 
 + (instancetype)viewControllerFromStoryboard {
   return [[UIStoryboard storyboardWithName:kPMMainStoryboardName bundle:nil]
-          instantiateViewControllerWithIdentifier:
+      instantiateViewControllerWithIdentifier:
           NSStringFromClass([PMPoemPageViewController class])];
 }
 

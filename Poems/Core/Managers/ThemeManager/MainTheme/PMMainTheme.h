@@ -11,7 +11,6 @@
 // Theme
 #import "PMTheme.h"
 
-
-@interface PMMainTheme : NSObject <PMTheme>
+@interface PMMainTheme : NSObject<PMTheme>
 
 @end

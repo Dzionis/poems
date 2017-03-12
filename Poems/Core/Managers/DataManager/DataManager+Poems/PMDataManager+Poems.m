@@ -73,12 +73,14 @@
 
 - (void)saveLastUpdate {
   NSTimeInterval lastUpdate = [[NSDate date] timeIntervalSince1970];
-  [[NSUserDefaults standardUserDefaults] setObject:@(lastUpdate)
-                                            forKey:kPMUserDefaultsLastUpdateKey];
+  [[NSUserDefaults standardUserDefaults]
+      setObject:@(lastUpdate)
+         forKey:kPMUserDefaultsLastUpdateKey];
 }
 
 - (NSNumber *)lastUpdate {
-  return [[NSUserDefaults standardUserDefaults] objectForKey:kPMUserDefaultsLastUpdateKey];
+  return [[NSUserDefaults standardUserDefaults]
+      objectForKey:kPMUserDefaultsLastUpdateKey];
 }
 
 @end

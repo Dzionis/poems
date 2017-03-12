@@ -14,16 +14,15 @@ NSString *const kPMBaseUrl = @"http://dzionis.by/api/poems/";
 
 #pragma mark - APIs
 
-NSString *const kPMAPIKolasPath  = @"poems.php";
-NSString *const kPMAPIUpdatesPath  = @"updates.php";
+NSString *const kPMAPIKolasPath = @"poems.php";
+NSString *const kPMAPIUpdatesPath = @"updates.php";
 
 #pragma mark - API Keys
 
-NSString *const kPMAPIAuthorKey  = @"author";
-NSString *const kPMAPIAuthorNameKey  = @"yakub_kolas";
-NSString *const kPMAPILastUpdateKey  = @"last_update";
-NSString *const kPMAPIMessageKey  = @"message";
-
+NSString *const kPMAPIAuthorKey = @"author";
+NSString *const kPMAPIAuthorNameKey = @"yakub_kolas";
+NSString *const kPMAPILastUpdateKey = @"last_update";
+NSString *const kPMAPIMessageKey = @"message";
 
 #pragma mark - Storyboards
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PMViewControllerFromStoryboardProtocol <NSObject>
+@protocol PMViewControllerFromStoryboardProtocol<NSObject>
 
 @required
 + (instancetype)viewControllerFromStoryboard;

@@ -1,6 +1,6 @@
 //
 //  PMPoemEntity+CoreDataClass.h
-//  
+//
 //
 //  Created by Dzionis Brek on 2/25/17.
 //

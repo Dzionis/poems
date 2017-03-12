@@ -9,12 +9,12 @@
 #import "PMPoemListHeaderView.h"
 
 @interface PMPoemListHeaderView ()
-@property (weak, nonatomic) IBOutlet UILabel *titleSectionLable;
+@property(weak, nonatomic) IBOutlet UILabel *titleSectionLable;
 @end
 
 @implementation PMPoemListHeaderView
 
-- (void)fillWithTitle:(NSString*)title {
+- (void)fillWithTitle:(NSString *)title {
   self.titleSectionLable.text = title;
 }
 

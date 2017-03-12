@@ -13,9 +13,10 @@
 
 @class PMPoem;
 
-@interface PMPoemPageViewController : UIViewController<PMViewControllerFromStoryboardProtocol>
+@interface PMPoemPageViewController
+    : UIViewController<PMViewControllerFromStoryboardProtocol>
 
-@property (strong, nonatomic) PMPoem *poem;
-@property (assign, nonatomic) BOOL favorite;
+@property(strong, nonatomic) PMPoem *poem;
+@property(assign, nonatomic) BOOL favorite;
 
 @end

@@ -11,8 +11,9 @@
 // Protocols
 #import "PMViewControllerFromStoryboardProtocol.h"
 
-@interface PMListViewController : UIViewController <PMViewControllerFromStoryboardProtocol>
+@interface PMListViewController
+    : UIViewController<PMViewControllerFromStoryboardProtocol>
 
-@property (assign, nonatomic) BOOL favorite;
+@property(assign, nonatomic) BOOL favorite;
 
 @end

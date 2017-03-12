@@ -11,8 +11,8 @@
 
 @interface PMPoemsDataSource : NSObject<UITableViewDataSource>
 
-@property (assign, nonatomic) BOOL favorite;
-@property (assign, nonatomic, getter=isFilterString) BOOL filterString;
+@property(assign, nonatomic) BOOL favorite;
+@property(assign, nonatomic, getter=isFilterString) BOOL filterString;
 
 /*!
  *  @discussion Sets a fetched results controller that efficiently manages the

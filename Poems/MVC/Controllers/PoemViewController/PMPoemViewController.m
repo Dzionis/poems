@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+
   [self configureView];
 }
 
@@ -45,15 +45,20 @@
 
 - (void)configureView {
   self.textLabel.text = self.poem;
-  UILongPressGestureRecognizer *tapRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(sharePoem)];
+  UILongPressGestureRecognizer *tapRecognizer = [
+      [UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                   action:@selector(sharePoem)];
   [self.textLabel addGestureRecognizer:tapRecognizer];
 }
 
 - (void)sharePoem {
   NSMutableArray *sharingItems = [NSMutableArray new];
-  NSString *text = [NSString stringWithFormat:@"%@\n\n%@", self.title, self.poem];
+  NSString *text =
+      [NSString stringWithFormat:@"%@\n\n%@", self.title, self.poem];
   [sharingItems addObject:text];
-  UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
+  UIActivityViewController *activityController =
+      [[UIActivityViewController alloc] initWithActivityItems:sharingItems
+                                        applicationActivities:nil];
   [self presentViewController:activityController animated:YES completion:nil];
 }
 
@@ -62,9 +67,9 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   // Get refrence of vertical indicator
   UIImageView *verticalIndicator = ((UIImageView *)[scrollView.subviews
-                                                    objectAtIndex:(scrollView.subviews.count - 1)]);
+      objectAtIndex:(scrollView.subviews.count - 1)]);
   // Set color to vertical indicator
-  
+
   [verticalIndicator setBackgroundColor:[UIColor redColor]];
   verticalIndicator.layer.cornerRadius = 2.0f;
 }
@@ -73,7 +78,7 @@
 
 + (instancetype)viewControllerFromStoryboard {
   return [[UIStoryboard storyboardWithName:kPMMainStoryboardName bundle:nil]
-          instantiateViewControllerWithIdentifier:
+      instantiateViewControllerWithIdentifier:
           NSStringFromClass([PMPoemViewController class])];
 }
 

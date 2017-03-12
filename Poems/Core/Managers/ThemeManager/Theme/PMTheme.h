@@ -17,14 +17,14 @@
 - (UIColor *)grayColor;
 
 // Labels
-- (UILabel*)labelForMainNavigationTitle;
-- (UILabel*)labelForNavigationTitleWithText:(NSString*)text;
+- (UILabel *)labelForMainNavigationTitle;
+- (UILabel *)labelForNavigationTitleWithText:(NSString *)text;
 
 // Images
-- (UIImage*)imageFavoriteForNavigationBar;
-- (UIImage*)imageFavoriteActiveForNavigationBar;
-- (UIImage*)imageBackForNavigationBar;
-- (UIImage*)imageSearch;
+- (UIImage *)imageFavoriteForNavigationBar;
+- (UIImage *)imageFavoriteActiveForNavigationBar;
+- (UIImage *)imageBackForNavigationBar;
+- (UIImage *)imageSearch;
 
 // Fonts
 - (UIFont *)emptyStateFont;
@@ -33,7 +33,7 @@
 - (UIFont *)navigationBarTitleFont;
 
 // Dictionaries
-- (NSDictionary*)navigationTitleTextAttributes;
+- (NSDictionary *)navigationTitleTextAttributes;
 
 @end
 

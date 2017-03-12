@@ -21,14 +21,15 @@
 NSString *const kPMPoemEmptySearchString =
     @"Сярод вершаў такіх не маем, пашукайце "
     @"іншыя творы.";
-NSString *const kPMPoemEmptyFavoriteString = @"Вы яшчэ не дадалі вершы ў "
-                                             @"абранае. Дадаць верш ў абранае "
-                                             @"можна на старонцы верша.";
+NSString *const kPMPoemEmptyFavoriteString =
+    @"Вы яшчэ не дадалі вершы ў "
+    @"абранае. Дадаць верш ў абранае "
+    @"можна на старонцы верша.";
 
 @interface PMPoemsDataSource ()
 
 @property(strong, nonatomic)
-NSFetchedResultsController *fetchedResultsController;
+    NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -48,7 +49,8 @@ NSFetchedResultsController *fetchedResultsController;
                                                CGRectGetHeight(frame))];
   CGFloat labelOffset = 16.0f;
   UILabel *noDataLabel = [[UILabel alloc]
-      initWithFrame:CGRectMake(labelOffset, 0, CGRectGetWidth(view.bounds) - labelOffset * 2,
+      initWithFrame:CGRectMake(labelOffset, 0,
+                               CGRectGetWidth(view.bounds) - labelOffset * 2,
                                CGRectGetHeight(view.bounds))];
   NSString *emptyStateText;
   if (self.isFilterString) {
@@ -78,31 +80,34 @@ NSFetchedResultsController *fetchedResultsController;
   return self.fetchedResultsController.sections.count;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView
+    titleForHeaderInSection:(NSInteger)section {
   id<NSFetchedResultsSectionInfo> sectionInfo =
-  self.fetchedResultsController.sections[section];
+      self.fetchedResultsController.sections[section];
   return [sectionInfo name];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+    numberOfRowsInSection:(NSInteger)section {
   id<NSFetchedResultsSectionInfo> sectionInfo =
-  self.fetchedResultsController.sections[section];
-  
+      self.fetchedResultsController.sections[section];
+
   return sectionInfo.numberOfObjects;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   PMPoemEntity *poemEntity =
-  [self.fetchedResultsController objectAtIndexPath:indexPath];
+      [self.fetchedResultsController objectAtIndexPath:indexPath];
   PMPoem *poem = [poemEntity mantleModel];
-  
-  PMPoemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PMPoemTableViewCell class])];
+
+  PMPoemTableViewCell *cell = [tableView
+      dequeueReusableCellWithIdentifier:NSStringFromClass(
+                                            [PMPoemTableViewCell class])];
   [cell fillCellWithTitle:poem.name];
-  
+
   id<NSFetchedResultsSectionInfo> sectionInfo =
-  self.fetchedResultsController.sections[indexPath.section];
+      self.fetchedResultsController.sections[indexPath.section];
   BOOL showSeparator = [sectionInfo numberOfObjects] != indexPath.row + 1;
   [cell showSeparator:showSeparator];
   return cell;

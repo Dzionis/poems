@@ -9,8 +9,8 @@
 #import "PMPoemTableViewCell.h"
 
 @interface PMPoemTableViewCell ()
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIView *separatorView;
+@property(weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property(weak, nonatomic) IBOutlet UIView *separatorView;
 @end
 
 @implementation PMPoemTableViewCell
@@ -18,23 +18,22 @@
 #pragma mark - Lifecycle
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+  [super awakeFromNib];
+  // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+  [super setSelected:selected animated:animated];
 }
 
 #pragma mark - Public
 
-- (void)fillCellWithTitle:(NSString*)title {
+- (void)fillCellWithTitle:(NSString *)title {
   self.titleLabel.text = title;
 }
 
 - (void)showSeparator:(BOOL)show {
   self.separatorView.hidden = !show;
 }
-
 
 @end

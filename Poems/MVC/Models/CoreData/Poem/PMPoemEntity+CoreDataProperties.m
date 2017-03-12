@@ -1,6 +1,6 @@
 //
 //  PMPoemEntity+CoreDataProperties.m
-//  
+//
 //
 //  Created by Dzionis Brek on 2/25/17.
 //
@@ -11,7 +11,7 @@
 @implementation PMPoemEntity (CoreDataProperties)
 
 + (NSFetchRequest<PMPoemEntity *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"PMPoemEntity"];
+  return [[NSFetchRequest alloc] initWithEntityName:@"PMPoemEntity"];
 }
 
 @dynamic authorID;

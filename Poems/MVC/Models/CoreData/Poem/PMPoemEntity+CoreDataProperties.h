@@ -1,6 +1,6 @@
 //
 //  PMPoemEntity+CoreDataProperties.h
-//  
+//
 //
 //  Created by Dzionis Brek on 2/25/17.
 //
@@ -17,12 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<PMPoemEntity *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSNumber *authorID;
-@property (nullable, nonatomic, copy) NSNumber *poemID;
-@property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, copy) NSString *text;
-@property (nullable, nonatomic, copy) NSNumber *year;
-@property (nullable, nonatomic, copy) NSNumber *favorite;
+@property(nullable, nonatomic, copy) NSNumber *authorID;
+@property(nullable, nonatomic, copy) NSNumber *poemID;
+@property(nullable, nonatomic, copy) NSString *name;
+@property(nullable, nonatomic, copy) NSString *text;
+@property(nullable, nonatomic, copy) NSNumber *year;
+@property(nullable, nonatomic, copy) NSNumber *favorite;
 
 @end
 

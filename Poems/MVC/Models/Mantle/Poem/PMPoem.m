@@ -14,12 +14,12 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
   return @{
-           @"poemID" : @"id",
-           @"name" : @"name",
-           @"text" : @"text",
-           @"year" : @"date",
-           @"authorID" : @"author_id",
-           };
+    @"poemID" : @"id",
+    @"name" : @"name",
+    @"text" : @"text",
+    @"year" : @"date",
+    @"authorID" : @"author_id",
+  };
 }
 
 @end

@@ -10,7 +10,6 @@
 
 @interface PMDataManager (Poems)
 
-- (void)fetchAllPoemsWithCompletion:(PMDataManagerCompletionHandler)
-completion;
+- (void)fetchAllPoemsWithCompletion:(PMDataManagerCompletionHandler)completion;
 
 @end

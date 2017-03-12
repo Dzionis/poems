@@ -17,10 +17,8 @@
 
 NSString *const kTimeoutErrorString = @"You are not connected to the internet";
 NSString *const kDefaultErrorString =
-@"Sorry, something went wrong. Please, try again later";
-NSString *const kRequestErrorString =
-@"Request was failed";
-
+    @"Sorry, something went wrong. Please, try again later";
+NSString *const kRequestErrorString = @"Request was failed";
 
 @interface PMNetworkManager ()
 
@@ -38,7 +36,7 @@ NSString *const kRequestErrorString =
   dispatch_once(&onceToken, ^{
     _sharedManager = [[PMNetworkManager alloc] init];
   });
-  
+
   return _sharedManager;
 }
 
@@ -46,10 +44,10 @@ NSString *const kRequestErrorString =
   self = [super init];
   if (self) {
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-    
+
     _sessionManager = [[AFHTTPSessionManager alloc]
-                       initWithBaseURL:[NSURL URLWithString:kPMBaseUrl]];
-    
+        initWithBaseURL:[NSURL URLWithString:kPMBaseUrl]];
+
     _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
     _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
   }
@@ -60,9 +58,8 @@ NSString *const kRequestErrorString =
 
 - (void)allPoemsWithSuccess:(PMNetworkSuccessBlock)success
                     failure:(PMNetworkFailedBlock)failure {
-  NSString *requestPath =
-  [PMNetworkManager requestWithPath:kPMAPIKolasPath];
-  NSDictionary *params = @{kPMAPIAuthorKey: kPMAPIAuthorNameKey};
+  NSString *requestPath = [PMNetworkManager requestWithPath:kPMAPIKolasPath];
+  NSDictionary *params = @{kPMAPIAuthorKey : kPMAPIAuthorNameKey};
   [self getRequestWithService:requestPath
                    parameters:params
                       success:success
@@ -72,10 +69,11 @@ NSString *const kRequestErrorString =
 - (void)checkUpdatesWithLastUpdate:(NSUInteger)lastUpdate
                            success:(PMNetworkSuccessBlock)success
                            failure:(PMNetworkFailedBlock)failure {
-  NSString *requestPath =
-  [PMNetworkManager requestWithPath:kPMAPIUpdatesPath];
-  NSDictionary *params = @{kPMAPIAuthorKey: kPMAPIAuthorNameKey,
-                           kPMAPILastUpdateKey: @(lastUpdate)};
+  NSString *requestPath = [PMNetworkManager requestWithPath:kPMAPIUpdatesPath];
+  NSDictionary *params = @{
+    kPMAPIAuthorKey : kPMAPIAuthorNameKey,
+    kPMAPILastUpdateKey : @(lastUpdate)
+  };
   [self getRequestWithService:requestPath
                    parameters:params
                       success:success
@@ -93,7 +91,7 @@ NSString *const kRequestErrorString =
       0) {
     return YES;
   }
-  
+
   if ([AFNetworkReachabilityManager sharedManager].reachable) {
     return YES;
   } else {
@@ -103,14 +101,14 @@ NSString *const kRequestErrorString =
 
 + (NSString *)jsonMessageStatusError:(NSError *)error {
   NSData *errorData =
-  error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
-  
+      error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
+
   if (errorData) {
     NSDictionary *errorDictionary =
-    [NSJSONSerialization JSONObjectWithData:errorData
-                                    options:kNilOptions
-                                      error:nil];
-    
+        [NSJSONSerialization JSONObjectWithData:errorData
+                                        options:kNilOptions
+                                          error:nil];
+
     NSString *errorMessage = errorDictionary[kPMAPIMessageKey];
     return errorMessage;
   }
@@ -129,9 +127,9 @@ NSString *const kRequestErrorString =
 - (NSError *)createErrorWithCode:(NSInteger)errorCode
             localizedDescription:(NSString *)localizedDescription {
   NSError *error = [NSError
-                    errorWithDomain:kPMBaseUrl
-                    code:errorCode
-                    userInfo:@{NSLocalizedDescriptionKey : localizedDescription}];
+      errorWithDomain:kPMBaseUrl
+                 code:errorCode
+             userInfo:@{NSLocalizedDescriptionKey : localizedDescription}];
   return error;
 }
 
@@ -143,31 +141,31 @@ NSString *const kRequestErrorString =
                       failure:(PMNetworkFailedBlock)failure {
   if (![PMNetworkManager checkInternetConnection]) {
     NSError *error =
-    [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
+        [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
     if (failure) {
       failure(error);
     }
     return;
   }
-  
+
   [self.sessionManager GET:service
-                parameters:parameters
-                  progress:nil
-                   success:^(NSURLSessionDataTask *task, id responseObject) {
-                     
-                     // Update token after each get request.
-                     if (success) {
-                       success(responseObject);
-                     }
-                   }
-                   failure:^(NSURLSessionDataTask *task, NSError *error) {
-                     // Check Unauthorized error.
-                     [self checkUnauthorizedError:&error];
-                     
-                     if (failure) {
-                       failure(error);
-                     }
-                   }];
+      parameters:parameters
+      progress:nil
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+
+        // Update token after each get request.
+        if (success) {
+          success(responseObject);
+        }
+      }
+      failure:^(NSURLSessionDataTask *task, NSError *error) {
+        // Check Unauthorized error.
+        [self checkUnauthorizedError:&error];
+
+        if (failure) {
+          failure(error);
+        }
+      }];
 }
 
 - (void)deleteRequestWithService:(NSString *)service
@@ -176,30 +174,30 @@ NSString *const kRequestErrorString =
                          failure:(PMNetworkFailedBlock)failure {
   if (![PMNetworkManager checkInternetConnection]) {
     NSError *error =
-    [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
+        [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
     if (failure) {
       failure(error);
     }
     return;
   }
-  
+
   [self.sessionManager DELETE:service
-                   parameters:parameters
-                      success:^(NSURLSessionDataTask *task, id responseObject) {
-                        
-                        if (success) {
-                          success(responseObject);
-                        }
-                      }
-                      failure:^(NSURLSessionDataTask *task, NSError *error) {
-                        
-                        // Check Unauthorized error.
-                        [self checkUnauthorizedError:&error];
-                        
-                        if (failure) {
-                          failure(error);
-                        }
-                      }];
+      parameters:parameters
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+
+        if (success) {
+          success(responseObject);
+        }
+      }
+      failure:^(NSURLSessionDataTask *task, NSError *error) {
+
+        // Check Unauthorized error.
+        [self checkUnauthorizedError:&error];
+
+        if (failure) {
+          failure(error);
+        }
+      }];
 }
 
 - (void)postRequestWithService:(NSString *)service
@@ -208,29 +206,29 @@ NSString *const kRequestErrorString =
                        failure:(PMNetworkFailedBlock)failure {
   if (![PMNetworkManager checkInternetConnection]) {
     NSError *error =
-    [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
+        [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
     if (failure) {
       failure(error);
     }
     return;
   }
-  
+
   [self.sessionManager POST:service
-                 parameters:params
-                   progress:nil
-                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                      if (success) {
-                        success(responseObject);
-                      }
-                    }
-                    failure:^(NSURLSessionDataTask *task, NSError *error) {
-                      // Check Unauthorized error.
-                      [self checkUnauthorizedError:&error];
-                      
-                      if (failure) {
-                        failure(error);
-                      }
-                    }];
+      parameters:params
+      progress:nil
+      success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (success) {
+          success(responseObject);
+        }
+      }
+      failure:^(NSURLSessionDataTask *task, NSError *error) {
+        // Check Unauthorized error.
+        [self checkUnauthorizedError:&error];
+
+        if (failure) {
+          failure(error);
+        }
+      }];
 }
 
 - (void)patchRequestWithService:(NSString *)service
@@ -239,31 +237,31 @@ NSString *const kRequestErrorString =
                         failure:(PMNetworkFailedBlock)failure {
   if (![PMNetworkManager checkInternetConnection]) {
     NSError *error =
-    [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
+        [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
     if (failure) {
       failure(error);
     }
     return;
   }
-  
+
   [self.sessionManager PATCH:service
-                  parameters:parameters
-                     success:^(NSURLSessionDataTask *_Nonnull task,
-                               id _Nullable responseObject) {
-                       
-                       if (success) {
-                         success(responseObject);
-                       }
-                     }
-                     failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
-                       
-                       // Check Unauthorized error.
-                       [self checkUnauthorizedError:&error];
-                       
-                       if (failure) {
-                         failure(error);
-                       }
-                     }];
+      parameters:parameters
+      success:^(NSURLSessionDataTask *_Nonnull task,
+                id _Nullable responseObject) {
+
+        if (success) {
+          success(responseObject);
+        }
+      }
+      failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
+
+        // Check Unauthorized error.
+        [self checkUnauthorizedError:&error];
+
+        if (failure) {
+          failure(error);
+        }
+      }];
 }
 
 - (void)putRequestWithService:(NSString *)service
@@ -272,41 +270,40 @@ NSString *const kRequestErrorString =
                       failure:(PMNetworkFailedBlock)failure {
   if (![PMNetworkManager checkInternetConnection]) {
     NSError *error =
-    [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
+        [self createErrorWithCode:408 localizedDescription:kTimeoutErrorString];
     if (failure) {
       failure(error);
     }
     return;
   }
-  
+
   [self.sessionManager PUT:service
-                parameters:parameters
-                   success:^(NSURLSessionDataTask *_Nonnull task,
-                             id _Nullable responseObject) {
-                     
-                     if (success) {
-                       success(responseObject);
-                     }
-                   }
-                   failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
-                     
-                     // Check Unauthorized error.
-                     [self checkUnauthorizedError:&error];
-                     
-                     if (failure) {
-                       failure(error);
-                     }
-                   }];
+      parameters:parameters
+      success:^(NSURLSessionDataTask *_Nonnull task,
+                id _Nullable responseObject) {
+
+        if (success) {
+          success(responseObject);
+        }
+      }
+      failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
+
+        // Check Unauthorized error.
+        [self checkUnauthorizedError:&error];
+
+        if (failure) {
+          failure(error);
+        }
+      }];
 }
 
 - (void)checkUnauthorizedError:(NSError **)outError {
   NSError *error = *outError;
   NSInteger statusCode = [[[error userInfo]
-                           objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
-  
+      objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
+
   // If status code is |401| unauthorized, just set token to nil.
   if (statusCode == 401) {
-  
   }
 }
 
