@@ -1,4 +1,4 @@
-platform :ios, '9.3'
+platform :ios, '8.2'
 target 'Poems' do
 
 # Model framework for Cocoa and Cocoa Touch
