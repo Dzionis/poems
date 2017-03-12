@@ -1,0 +1,833 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C6146571E5A0E1C00EDF56A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6146561E5A0E1C00EDF56A /* main.m */; };
+		5C6146601E5A0E1C00EDF56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C61465E1E5A0E1C00EDF56A /* Main.storyboard */; };
+		5C6146651E5A0E1C00EDF56A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6146641E5A0E1C00EDF56A /* Assets.xcassets */; };
+		5C6146681E5A0E1C00EDF56A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6146661E5A0E1C00EDF56A /* LaunchScreen.storyboard */; };
+		5C65F2C91E656ADD008C6108 /* PMPoemPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C65F2C81E656ADD008C6108 /* PMPoemPageViewController.m */; };
+		5C7C25D41E6222B7008BC3EB /* PMPoemsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C25D31E6222B7008BC3EB /* PMPoemsDataSource.m */; };
+		5CBE82C81E61B9390074C8B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE82B91E61B9390074C8B4 /* AppDelegate.m */; };
+		5CBE82CA1E61B9390074C8B4 /* PMPoemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE82C11E61B9390074C8B4 /* PMPoemViewController.m */; };
+		5CBE82CB1E61B9390074C8B4 /* PMPoemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE82C71E61B9390074C8B4 /* PMPoemTableViewCell.m */; };
+		5CBE82CF1E61B9910074C8B4 /* Poems.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE82CD1E61B9910074C8B4 /* Poems.xcdatamodeld */; };
+		5CBE83011E61C76D0074C8B4 /* PMPoem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE83001E61C76D0074C8B4 /* PMPoem.m */; };
+		5CBE83061E61CB620074C8B4 /* PMPoemEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE83031E61CB620074C8B4 /* PMPoemEntity+CoreDataClass.m */; };
+		5CBE830D1E61CD540074C8B4 /* PMPoemEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE830C1E61CD540074C8B4 /* PMPoemEntity+CoreDataProperties.m */; };
+		5CBE83131E61D2490074C8B4 /* PMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE83121E61D2490074C8B4 /* PMDataManager.m */; };
+		5CBE83171E61D2FC0074C8B4 /* PMDataManager+Poems.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE83161E61D2FC0074C8B4 /* PMDataManager+Poems.m */; };
+		5CBE831B1E61D6F80074C8B4 /* PMNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE831A1E61D6F80074C8B4 /* PMNetworkManager.m */; };
+		5CBE83231E61D98E0074C8B4 /* PMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE83221E61D98E0074C8B4 /* PMConstants.m */; };
+		5CD07A4B1E649FDF000220FF /* Neucha.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD07A451E649FDF000220FF /* Neucha.ttf */; };
+		5CD07A4C1E649FDF000220FF /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD07A471E649FDF000220FF /* RobotoSlab-Bold.ttf */; };
+		5CD07A4D1E649FDF000220FF /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD07A481E649FDF000220FF /* RobotoSlab-Light.ttf */; };
+		5CD07A4E1E649FDF000220FF /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD07A491E649FDF000220FF /* RobotoSlab-Regular.ttf */; };
+		5CD07A4F1E649FDF000220FF /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5CD07A4A1E649FDF000220FF /* RobotoSlab-Thin.ttf */; };
+		5CD07A591E64C178000220FF /* PMPoemListSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD07A581E64C178000220FF /* PMPoemListSectionView.m */; };
+		5CD07A5B1E64C191000220FF /* PMPoemListSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CD07A5A1E64C191000220FF /* PMPoemListSectionView.xib */; };
+		5CD07A611E64C874000220FF /* PMTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD07A601E64C874000220FF /* PMTheme.m */; };
+		5CD07A641E64C912000220FF /* PMMainTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD07A631E64C912000220FF /* PMMainTheme.m */; };
+		5CD07A691E64DB94000220FF /* UIImage+FromColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD07A681E64DB94000220FF /* UIImage+FromColor.m */; };
+		5CD07A6D1E64E162000220FF /* PMPoemListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD07A6C1E64E162000220FF /* PMPoemListHeaderView.m */; };
+		5CD07A6F1E64E18C000220FF /* PMPoemListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CD07A6E1E64E18C000220FF /* PMPoemListHeaderView.xib */; };
+		5CD07A731E64E60E000220FF /* PMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD07A721E64E60E000220FF /* PMListViewController.m */; };
+		971C9EB6BE94C415CA5D5B36 /* libPods-Poems.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 047AC725EF1ABAA988B91502 /* libPods-Poems.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		047AC725EF1ABAA988B91502 /* libPods-Poems.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Poems.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1901022924C13869824EA160 /* Pods-Poems.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poems.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poems/Pods-Poems.debug.xcconfig"; sourceTree = "<group>"; };
+		21D3967CF4A9B5A2814DC216 /* Pods-Poems.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poems.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poems/Pods-Poems.release.xcconfig"; sourceTree = "<group>"; };
+		5C6146521E5A0E1C00EDF56A /* Poems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poems.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C6146561E5A0E1C00EDF56A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5C61465F1E5A0E1C00EDF56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C6146641E5A0E1C00EDF56A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C6146671E5A0E1C00EDF56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C6146691E5A0E1C00EDF56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C65F2C71E656ADD008C6108 /* PMPoemPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoemPageViewController.h; sourceTree = "<group>"; };
+		5C65F2C81E656ADD008C6108 /* PMPoemPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoemPageViewController.m; sourceTree = "<group>"; };
+		5C65F2CB1E658019008C6108 /* PMViewControllerFromStoryboardProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMViewControllerFromStoryboardProtocol.h; sourceTree = "<group>"; };
+		5C7C25D21E6222B7008BC3EB /* PMPoemsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoemsDataSource.h; sourceTree = "<group>"; };
+		5C7C25D31E6222B7008BC3EB /* PMPoemsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoemsDataSource.m; sourceTree = "<group>"; };
+		5CBE82B81E61B9390074C8B4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5CBE82B91E61B9390074C8B4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5CBE82C01E61B9390074C8B4 /* PMPoemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoemViewController.h; sourceTree = "<group>"; };
+		5CBE82C11E61B9390074C8B4 /* PMPoemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoemViewController.m; sourceTree = "<group>"; };
+		5CBE82C61E61B9390074C8B4 /* PMPoemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoemTableViewCell.h; sourceTree = "<group>"; };
+		5CBE82C71E61B9390074C8B4 /* PMPoemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoemTableViewCell.m; sourceTree = "<group>"; };
+		5CBE82CE1E61B9910074C8B4 /* Poems.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Poems.xcdatamodel; sourceTree = "<group>"; };
+		5CBE82FF1E61C76D0074C8B4 /* PMPoem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoem.h; sourceTree = "<group>"; };
+		5CBE83001E61C76D0074C8B4 /* PMPoem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoem.m; sourceTree = "<group>"; };
+		5CBE83021E61CB620074C8B4 /* PMPoemEntity+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMPoemEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		5CBE83031E61CB620074C8B4 /* PMPoemEntity+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMPoemEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		5CBE830B1E61CD540074C8B4 /* PMPoemEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMPoemEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5CBE830C1E61CD540074C8B4 /* PMPoemEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMPoemEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5CBE83111E61D2490074C8B4 /* PMDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataManager.h; sourceTree = "<group>"; };
+		5CBE83121E61D2490074C8B4 /* PMDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataManager.m; sourceTree = "<group>"; };
+		5CBE83151E61D2FC0074C8B4 /* PMDataManager+Poems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMDataManager+Poems.h"; sourceTree = "<group>"; };
+		5CBE83161E61D2FC0074C8B4 /* PMDataManager+Poems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMDataManager+Poems.m"; sourceTree = "<group>"; };
+		5CBE83191E61D6F80074C8B4 /* PMNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNetworkManager.h; sourceTree = "<group>"; };
+		5CBE831A1E61D6F80074C8B4 /* PMNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNetworkManager.m; sourceTree = "<group>"; };
+		5CBE83211E61D98E0074C8B4 /* PMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMConstants.h; sourceTree = "<group>"; };
+		5CBE83221E61D98E0074C8B4 /* PMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMConstants.m; sourceTree = "<group>"; };
+		5CD07A451E649FDF000220FF /* Neucha.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Neucha.ttf; sourceTree = "<group>"; };
+		5CD07A471E649FDF000220FF /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
+		5CD07A481E649FDF000220FF /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
+		5CD07A491E649FDF000220FF /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
+		5CD07A4A1E649FDF000220FF /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
+		5CD07A571E64C178000220FF /* PMPoemListSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoemListSectionView.h; sourceTree = "<group>"; };
+		5CD07A581E64C178000220FF /* PMPoemListSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoemListSectionView.m; sourceTree = "<group>"; };
+		5CD07A5A1E64C191000220FF /* PMPoemListSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPoemListSectionView.xib; sourceTree = "<group>"; };
+		5CD07A5F1E64C874000220FF /* PMTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTheme.h; sourceTree = "<group>"; };
+		5CD07A601E64C874000220FF /* PMTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTheme.m; sourceTree = "<group>"; };
+		5CD07A621E64C912000220FF /* PMMainTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMMainTheme.h; sourceTree = "<group>"; };
+		5CD07A631E64C912000220FF /* PMMainTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMMainTheme.m; sourceTree = "<group>"; };
+		5CD07A671E64DB94000220FF /* UIImage+FromColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FromColor.h"; sourceTree = "<group>"; };
+		5CD07A681E64DB94000220FF /* UIImage+FromColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FromColor.m"; sourceTree = "<group>"; };
+		5CD07A6B1E64E162000220FF /* PMPoemListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoemListHeaderView.h; sourceTree = "<group>"; };
+		5CD07A6C1E64E162000220FF /* PMPoemListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoemListHeaderView.m; sourceTree = "<group>"; };
+		5CD07A6E1E64E18C000220FF /* PMPoemListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPoemListHeaderView.xib; sourceTree = "<group>"; };
+		5CD07A711E64E60E000220FF /* PMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMListViewController.h; sourceTree = "<group>"; };
+		5CD07A721E64E60E000220FF /* PMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMListViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C61464F1E5A0E1C00EDF56A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				971C9EB6BE94C415CA5D5B36 /* libPods-Poems.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33EBCB010A0CAE743C6303BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1901022924C13869824EA160 /* Pods-Poems.debug.xcconfig */,
+				21D3967CF4A9B5A2814DC216 /* Pods-Poems.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5C6146491E5A0E1C00EDF56A = {
+			isa = PBXGroup;
+			children = (
+				5C6146541E5A0E1C00EDF56A /* Poems */,
+				5C6146531E5A0E1C00EDF56A /* Products */,
+				33EBCB010A0CAE743C6303BF /* Pods */,
+				DAB0C5D8D04E22806536A925 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C6146531E5A0E1C00EDF56A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C6146521E5A0E1C00EDF56A /* Poems.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C6146541E5A0E1C00EDF56A /* Poems */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82CC1E61B9480074C8B4 /* Storyboards */,
+				5CBE82B71E61B9390074C8B4 /* AppDelegate */,
+				5CBE831D1E61D8EE0074C8B4 /* Constants */,
+				5CBE830E1E61D22A0074C8B4 /* Core */,
+				5CBE82BA1E61B9390074C8B4 /* MVC */,
+				5C6146641E5A0E1C00EDF56A /* Assets.xcassets */,
+				5C6146691E5A0E1C00EDF56A /* Info.plist */,
+				5CD07A421E649FDF000220FF /* Resources */,
+				5C6146551E5A0E1C00EDF56A /* Supporting Files */,
+			);
+			path = Poems;
+			sourceTree = "<group>";
+		};
+		5C6146551E5A0E1C00EDF56A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C6146561E5A0E1C00EDF56A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C65F2C61E656AC0008C6108 /* PoemPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5C65F2C71E656ADD008C6108 /* PMPoemPageViewController.h */,
+				5C65F2C81E656ADD008C6108 /* PMPoemPageViewController.m */,
+			);
+			path = PoemPageViewController;
+			sourceTree = "<group>";
+		};
+		5C65F2CA1E657FE7008C6108 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5C65F2CB1E658019008C6108 /* PMViewControllerFromStoryboardProtocol.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5C7C25D01E62229E008BC3EB /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				5C7C25D11E62229E008BC3EB /* Poems */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		5C7C25D11E62229E008BC3EB /* Poems */ = {
+			isa = PBXGroup;
+			children = (
+				5C7C25D21E6222B7008BC3EB /* PMPoemsDataSource.h */,
+				5C7C25D31E6222B7008BC3EB /* PMPoemsDataSource.m */,
+			);
+			path = Poems;
+			sourceTree = "<group>";
+		};
+		5CBE82B71E61B9390074C8B4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82B81E61B9390074C8B4 /* AppDelegate.h */,
+				5CBE82B91E61B9390074C8B4 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5CBE82BA1E61B9390074C8B4 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82BB1E61B9390074C8B4 /* Controllers */,
+				5CBE82C21E61B9390074C8B4 /* Models */,
+				5CBE82C31E61B9390074C8B4 /* Views */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		5CBE82BB1E61B9390074C8B4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C65F2CA1E657FE7008C6108 /* Base */,
+				5CD07A701E64E60E000220FF /* ListViewController */,
+				5C65F2C61E656AC0008C6108 /* PoemPageViewController */,
+				5CBE82BF1E61B9390074C8B4 /* PoemViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5CBE82BF1E61B9390074C8B4 /* PoemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82C01E61B9390074C8B4 /* PMPoemViewController.h */,
+				5CBE82C11E61B9390074C8B4 /* PMPoemViewController.m */,
+			);
+			path = PoemViewController;
+			sourceTree = "<group>";
+		};
+		5CBE82C21E61B9390074C8B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82CD1E61B9910074C8B4 /* Poems.xcdatamodeld */,
+				5CBE82FD1E61C74E0074C8B4 /* Mantle */,
+				5CBE82D01E61B9A30074C8B4 /* CoreData */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5CBE82C31E61B9390074C8B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A551E64C155000220FF /* Views */,
+				5CBE82C41E61B9390074C8B4 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5CBE82C41E61B9390074C8B4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82C51E61B9390074C8B4 /* PoemTableView */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5CBE82C51E61B9390074C8B4 /* PoemTableView */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82C61E61B9390074C8B4 /* PMPoemTableViewCell.h */,
+				5CBE82C71E61B9390074C8B4 /* PMPoemTableViewCell.m */,
+			);
+			path = PoemTableView;
+			sourceTree = "<group>";
+		};
+		5CBE82CC1E61B9480074C8B4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5C61465E1E5A0E1C00EDF56A /* Main.storyboard */,
+				5C6146661E5A0E1C00EDF56A /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		5CBE82D01E61B9A30074C8B4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82D11E61B9A30074C8B4 /* Poem */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5CBE82D11E61B9A30074C8B4 /* Poem */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE83021E61CB620074C8B4 /* PMPoemEntity+CoreDataClass.h */,
+				5CBE83031E61CB620074C8B4 /* PMPoemEntity+CoreDataClass.m */,
+				5CBE830B1E61CD540074C8B4 /* PMPoemEntity+CoreDataProperties.h */,
+				5CBE830C1E61CD540074C8B4 /* PMPoemEntity+CoreDataProperties.m */,
+			);
+			path = Poem;
+			sourceTree = "<group>";
+		};
+		5CBE82FD1E61C74E0074C8B4 /* Mantle */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82FE1E61C7590074C8B4 /* Poem */,
+			);
+			path = Mantle;
+			sourceTree = "<group>";
+		};
+		5CBE82FE1E61C7590074C8B4 /* Poem */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE82FF1E61C76D0074C8B4 /* PMPoem.h */,
+				5CBE83001E61C76D0074C8B4 /* PMPoem.m */,
+			);
+			path = Poem;
+			sourceTree = "<group>";
+		};
+		5CBE830E1E61D22A0074C8B4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5C7C25D01E62229E008BC3EB /* DataSources */,
+				5CBE830F1E61D22A0074C8B4 /* Managers */,
+				5CD07A651E64DB3C000220FF /* Extentions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5CBE830F1E61D22A0074C8B4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE83181E61D63B0074C8B4 /* NetworkManager */,
+				5CBE83101E61D22A0074C8B4 /* DataManager */,
+				5CD07A5C1E64C84F000220FF /* ThemeManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5CBE83101E61D22A0074C8B4 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE83111E61D2490074C8B4 /* PMDataManager.h */,
+				5CBE83121E61D2490074C8B4 /* PMDataManager.m */,
+				5CBE83141E61D2E30074C8B4 /* DataManager+Poems */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		5CBE83141E61D2E30074C8B4 /* DataManager+Poems */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE83151E61D2FC0074C8B4 /* PMDataManager+Poems.h */,
+				5CBE83161E61D2FC0074C8B4 /* PMDataManager+Poems.m */,
+			);
+			path = "DataManager+Poems";
+			sourceTree = "<group>";
+		};
+		5CBE83181E61D63B0074C8B4 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE83191E61D6F80074C8B4 /* PMNetworkManager.h */,
+				5CBE831A1E61D6F80074C8B4 /* PMNetworkManager.m */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		5CBE831D1E61D8EE0074C8B4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE83211E61D98E0074C8B4 /* PMConstants.h */,
+				5CBE83221E61D98E0074C8B4 /* PMConstants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		5CD07A421E649FDF000220FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A431E649FDF000220FF /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5CD07A431E649FDF000220FF /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A441E649FDF000220FF /* Neucha */,
+				5CD07A461E649FDF000220FF /* Roboto_Slab */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		5CD07A441E649FDF000220FF /* Neucha */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A451E649FDF000220FF /* Neucha.ttf */,
+			);
+			path = Neucha;
+			sourceTree = "<group>";
+		};
+		5CD07A461E649FDF000220FF /* Roboto_Slab */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A471E649FDF000220FF /* RobotoSlab-Bold.ttf */,
+				5CD07A481E649FDF000220FF /* RobotoSlab-Light.ttf */,
+				5CD07A491E649FDF000220FF /* RobotoSlab-Regular.ttf */,
+				5CD07A4A1E649FDF000220FF /* RobotoSlab-Thin.ttf */,
+			);
+			path = Roboto_Slab;
+			sourceTree = "<group>";
+		};
+		5CD07A551E64C155000220FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A6A1E64E143000220FF /* PoemListHeaderView */,
+				5CD07A561E64C155000220FF /* PoemListSectionHeaderView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5CD07A561E64C155000220FF /* PoemListSectionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A571E64C178000220FF /* PMPoemListSectionView.h */,
+				5CD07A581E64C178000220FF /* PMPoemListSectionView.m */,
+				5CD07A5A1E64C191000220FF /* PMPoemListSectionView.xib */,
+			);
+			path = PoemListSectionHeaderView;
+			sourceTree = "<group>";
+		};
+		5CD07A5C1E64C84F000220FF /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A5E1E64C850000220FF /* Theme */,
+				5CD07A5D1E64C850000220FF /* MainTheme */,
+			);
+			path = ThemeManager;
+			sourceTree = "<group>";
+		};
+		5CD07A5D1E64C850000220FF /* MainTheme */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A621E64C912000220FF /* PMMainTheme.h */,
+				5CD07A631E64C912000220FF /* PMMainTheme.m */,
+			);
+			path = MainTheme;
+			sourceTree = "<group>";
+		};
+		5CD07A5E1E64C850000220FF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A5F1E64C874000220FF /* PMTheme.h */,
+				5CD07A601E64C874000220FF /* PMTheme.m */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		5CD07A651E64DB3C000220FF /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A661E64DB3C000220FF /* Categories */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		5CD07A661E64DB3C000220FF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A671E64DB94000220FF /* UIImage+FromColor.h */,
+				5CD07A681E64DB94000220FF /* UIImage+FromColor.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5CD07A6A1E64E143000220FF /* PoemListHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A6B1E64E162000220FF /* PMPoemListHeaderView.h */,
+				5CD07A6C1E64E162000220FF /* PMPoemListHeaderView.m */,
+				5CD07A6E1E64E18C000220FF /* PMPoemListHeaderView.xib */,
+			);
+			path = PoemListHeaderView;
+			sourceTree = "<group>";
+		};
+		5CD07A701E64E60E000220FF /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5CD07A711E64E60E000220FF /* PMListViewController.h */,
+				5CD07A721E64E60E000220FF /* PMListViewController.m */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
+		DAB0C5D8D04E22806536A925 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				047AC725EF1ABAA988B91502 /* libPods-Poems.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C6146511E5A0E1C00EDF56A /* Poems */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C61466C1E5A0E1C00EDF56A /* Build configuration list for PBXNativeTarget "Poems" */;
+			buildPhases = (
+				A4CCC6C2ED9D9531E143EDBD /* [CP] Check Pods Manifest.lock */,
+				5C61464E1E5A0E1C00EDF56A /* Sources */,
+				5C61464F1E5A0E1C00EDF56A /* Frameworks */,
+				5C6146501E5A0E1C00EDF56A /* Resources */,
+				9D25AE6AA3B35DA4387604B1 /* [CP] Embed Pods Frameworks */,
+				1462B9AC68F433336461A92A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Poems;
+			productName = Poems;
+			productReference = 5C6146521E5A0E1C00EDF56A /* Poems.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C61464A1E5A0E1C00EDF56A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Dzionis;
+				TargetAttributes = {
+					5C6146511E5A0E1C00EDF56A = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3DHMS7T33W;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 5C61464D1E5A0E1C00EDF56A /* Build configuration list for PBXProject "Poems" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C6146491E5A0E1C00EDF56A;
+			productRefGroup = 5C6146531E5A0E1C00EDF56A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C6146511E5A0E1C00EDF56A /* Poems */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C6146501E5A0E1C00EDF56A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD07A4E1E649FDF000220FF /* RobotoSlab-Regular.ttf in Resources */,
+				5CD07A5B1E64C191000220FF /* PMPoemListSectionView.xib in Resources */,
+				5CD07A4F1E649FDF000220FF /* RobotoSlab-Thin.ttf in Resources */,
+				5CD07A6F1E64E18C000220FF /* PMPoemListHeaderView.xib in Resources */,
+				5C6146681E5A0E1C00EDF56A /* LaunchScreen.storyboard in Resources */,
+				5CD07A4D1E649FDF000220FF /* RobotoSlab-Light.ttf in Resources */,
+				5C6146651E5A0E1C00EDF56A /* Assets.xcassets in Resources */,
+				5CD07A4C1E649FDF000220FF /* RobotoSlab-Bold.ttf in Resources */,
+				5CD07A4B1E649FDF000220FF /* Neucha.ttf in Resources */,
+				5C6146601E5A0E1C00EDF56A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1462B9AC68F433336461A92A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poems/Pods-Poems-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D25AE6AA3B35DA4387604B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poems/Pods-Poems-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4CCC6C2ED9D9531E143EDBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C61464E1E5A0E1C00EDF56A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CBE830D1E61CD540074C8B4 /* PMPoemEntity+CoreDataProperties.m in Sources */,
+				5CBE82CB1E61B9390074C8B4 /* PMPoemTableViewCell.m in Sources */,
+				5CBE83231E61D98E0074C8B4 /* PMConstants.m in Sources */,
+				5CD07A6D1E64E162000220FF /* PMPoemListHeaderView.m in Sources */,
+				5CD07A611E64C874000220FF /* PMTheme.m in Sources */,
+				5CBE82CF1E61B9910074C8B4 /* Poems.xcdatamodeld in Sources */,
+				5CBE83131E61D2490074C8B4 /* PMDataManager.m in Sources */,
+				5CBE83011E61C76D0074C8B4 /* PMPoem.m in Sources */,
+				5C6146571E5A0E1C00EDF56A /* main.m in Sources */,
+				5CD07A591E64C178000220FF /* PMPoemListSectionView.m in Sources */,
+				5CD07A641E64C912000220FF /* PMMainTheme.m in Sources */,
+				5CBE831B1E61D6F80074C8B4 /* PMNetworkManager.m in Sources */,
+				5CBE82C81E61B9390074C8B4 /* AppDelegate.m in Sources */,
+				5CD07A691E64DB94000220FF /* UIImage+FromColor.m in Sources */,
+				5C7C25D41E6222B7008BC3EB /* PMPoemsDataSource.m in Sources */,
+				5C65F2C91E656ADD008C6108 /* PMPoemPageViewController.m in Sources */,
+				5CBE83171E61D2FC0074C8B4 /* PMDataManager+Poems.m in Sources */,
+				5CBE83061E61CB620074C8B4 /* PMPoemEntity+CoreDataClass.m in Sources */,
+				5CD07A731E64E60E000220FF /* PMListViewController.m in Sources */,
+				5CBE82CA1E61B9390074C8B4 /* PMPoemViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C61465E1E5A0E1C00EDF56A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C61465F1E5A0E1C00EDF56A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C6146661E5A0E1C00EDF56A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C6146671E5A0E1C00EDF56A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C61466A1E5A0E1C00EDF56A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5C61466B1E5A0E1C00EDF56A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C61466D1E5A0E1C00EDF56A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1901022924C13869824EA160 /* Pods-Poems.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Poems/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		5C61466E1E5A0E1C00EDF56A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21D3967CF4A9B5A2814DC216 /* Pods-Poems.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Poems/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C61464D1E5A0E1C00EDF56A /* Build configuration list for PBXProject "Poems" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C61466A1E5A0E1C00EDF56A /* Debug */,
+				5C61466B1E5A0E1C00EDF56A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C61466C1E5A0E1C00EDF56A /* Build configuration list for PBXNativeTarget "Poems" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C61466D1E5A0E1C00EDF56A /* Debug */,
+				5C61466E1E5A0E1C00EDF56A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5CBE82CD1E61B9910074C8B4 /* Poems.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5CBE82CE1E61B9910074C8B4 /* Poems.xcdatamodel */,
+			);
+			currentVersion = 5CBE82CE1E61B9910074C8B4 /* Poems.xcdatamodel */;
+			path = Poems.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5C61464A1E5A0E1C00EDF56A /* Project object */;
+}

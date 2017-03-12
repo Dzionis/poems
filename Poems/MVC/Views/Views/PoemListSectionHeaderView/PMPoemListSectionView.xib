@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Neucha.ttf">
+            <string>Neucha</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="PMPoemListSectionView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="34"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1E-iZ-fZv">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="Fh2-tz-NOj">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="А" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-zY-wsx">
+                            <rect key="frame" x="0.0" y="2" width="42" height="32"/>
+                            <fontDescription key="fontDescription" name="Neucha" family="Neucha" pointSize="24"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6Xu-zY-wsx" firstAttribute="top" secondItem="E1E-iZ-fZv" secondAttribute="top" constant="2" id="9Ha-95-OFd"/>
+                        <constraint firstAttribute="height" constant="34" id="BcR-hJ-zA1"/>
+                        <constraint firstItem="Fh2-tz-NOj" firstAttribute="top" secondItem="E1E-iZ-fZv" secondAttribute="top" id="Nqr-SO-qou"/>
+                        <constraint firstItem="Fh2-tz-NOj" firstAttribute="leading" secondItem="E1E-iZ-fZv" secondAttribute="leading" id="T44-cj-1Nb"/>
+                        <constraint firstAttribute="bottom" secondItem="6Xu-zY-wsx" secondAttribute="bottom" id="XHP-z6-Rr2"/>
+                        <constraint firstAttribute="bottom" secondItem="Fh2-tz-NOj" secondAttribute="bottom" id="iaX-hN-Eyl"/>
+                        <constraint firstAttribute="width" constant="50" id="oAb-SZ-f8F"/>
+                        <constraint firstItem="6Xu-zY-wsx" firstAttribute="leading" secondItem="E1E-iZ-fZv" secondAttribute="leading" id="qyC-Yc-yFj"/>
+                        <constraint firstAttribute="trailing" secondItem="6Xu-zY-wsx" secondAttribute="trailing" constant="8" id="wbr-pb-2oD"/>
+                        <constraint firstAttribute="trailing" secondItem="Fh2-tz-NOj" secondAttribute="trailing" id="xmG-6A-hEO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="E1E-iZ-fZv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5lb-xx-cNP"/>
+                <constraint firstItem="E1E-iZ-fZv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="b1q-E3-hFG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="letterLabel" destination="6Xu-zY-wsx" id="AuE-QB-4lt"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_bookmark" width="47" height="34"/>
+    </resources>
+</document>
